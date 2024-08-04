@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Transporte com Anésio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agendamento de Transporte com Anésio</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="link-agendar">Agendar</a></li>
+                <li><a href="#" id="link-horarios">Horários Marcados</a></li>
+                <li><a href="#" id="link-calendario">Calendário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="agendamento" class="active">
+        <h2>Agende seu Horário</h2>
+        <form id="agendamento-form">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data" required>
+            
+            <label for="hora">Hora:</label>
+            <select id="hora" name="hora" required>
+                <!-- Opções de horários a cada 45 minutos serão preenchidas aqui -->
+            </select>
+            
+            <label for="endereco-partida">Endereço de Partida:</label>
+            <input type="text" id="endereco-partida" name="endereco-partida" required>
+            
+            <label for="endereco-destino">Destino Final:</label>
+            <input type="text" id="endereco-destino" name="endereco-destino" required>
+            
+            <label for="quantidade">Quantidade de Pessoas (Máx. 6):</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" max="6" required>
+            
+            <div id="enderecos-adicionais">
+                <!-- Endereços adicionais serão adicionados aqui -->
+            </div>
+            
+            <p>Chave Pix para Pagamento: 99292-2248</p>
+            
+            <button type="submit">Agendar</button>
+        </form>
+    </main>
+
+    <main id="horarios" class="hidden">
+        <h2>Horários Marcados</h2>
+        <table id="horarios-tabela">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Endereço de Partida</th>
+                    <th>Destino Final</th>
+                    <th>Endereços Adicionais</th>
+                    <th>Quantidade de Pessoas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Horários marcados aparecerão aqui -->
+            </tbody>
+        </table>
+    </main>
+
+    <main id="calendario" class="hidden">
+        <h2>Calendário de Agendamentos</h2>
+        <div id="calendar-container">
+            <!-- O calendário será gerado aqui -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
