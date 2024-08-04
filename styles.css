@@ -35,10 +35,6 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main.hidden {
-    display: none;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -64,10 +60,6 @@ form button {
 
 form button:hover {
     background-color: #0056b3;
-}
-
-#enderecos-adicionais label {
-    margin-top: 0.5rem;
 }
 
 table {
