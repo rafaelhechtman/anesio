@@ -1,4 +1,8 @@
+console.log("Script carregado");
+
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM completamente carregado e analisado");
+
     const calendar = document.getElementById('calendar');
     const monthYearDisplay = document.getElementById('calendar-month-year');
     const prevMonthBtn = document.getElementById('prev-month');
@@ -16,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function renderCalendar(month, year) {
+        console.log(`Renderizando calendário para ${month + 1}/${year}`);
         calendar.innerHTML = '';
         monthYearDisplay.textContent = `${getMonthName(month)} ${year}`;
 
@@ -45,9 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     const button = document.createElement('button');
                     button.type = 'button';
                     button.classList.add('mark-button');
-                    button.dataset.date = `${date}-${month + 1}-${year}`;
+                    button.textContent = 'Agende aqui';
+                    button.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
                     button.addEventListener('click', () => {
-                        window.location.href = `agendamento.html?date=${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+                        console.log(`Data selecionada: ${button.dataset.date}`);
+                        window.location.href = `agendamento.html?date=${button.dataset.date}`;
                     });
                     cell.appendChild(button);
                     date++;
