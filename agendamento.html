@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento para <span id="data-agendamento"></span></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Agendamento de Transporte com Anésio</h1>
+    </header>
+    <main>
+        <h2>Agende seu Horário para <span id="data-agendamento-header"></span></h2>
+        <form id="agendamento-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+            
+            <label for="hora">Hora:</label>
+            <select id="hora" name="hora" required>
+                <!-- Opções de horários a cada 45 minutos serão preenchidas pelo JavaScript -->
+            </select>
+            
+            <label for="endereco-partida">Endereço de Partida:</label>
+            <input type="text" id="endereco-partida" name="endereco-partida" required>
+            
+            <label for="endereco-destino">Destino Final:</label>
+            <input type="text" id="endereco-destino" name="endereco-destino" required>
+            
+            <label for="quantidade">Quantidade de Pessoas (Máx. 6):</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" max="6" required>
+            
+            <p>Chave Pix para Pagamento: 99292-2248</p>
+            
+            <button type="submit">Agendar</button>
+        </form>
+        <h2>Horários Marcados para <span id="data-agendamento-list"></span></h2>
+        <table id="horarios-tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Hora</th>
+                    <th>Endereço de Partida</th>
+                    <th>Destino Final</th>
+                    <th>Quantidade de Pessoas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Horários marcados aparecerão aqui -->
+            </tbody>
+        </table>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

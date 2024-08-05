@@ -1,196 +1,97 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
     background-color: #007bff;
     color: white;
-    padding: 1rem;
+    padding: 1em;
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
 main {
-    padding: 1rem;
-    margin: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    max-width: 800px;
+    margin: auto;
 }
 
-form {
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.calendar-container {
+    margin-bottom: 2em;
+}
+
+.calendar-container h2 {
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5em;
+    font-family: 'Verdana', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.calendar-nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
-form label {
-    margin-top: 1rem;
-}
-
-form input, form select, form button {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form button {
+.calendar-nav button {
     background-color: #007bff;
     color: white;
     border: none;
+    padding: 0.5em 1em;
     cursor: pointer;
 }
 
-form button:hover {
-    background-color: #0056b3;
-}
-
-table {
-    width: 100%;
+.calendar {
+    display: table;
     border-collapse: collapse;
-    margin-top: 1rem;
+    width: 100%;
 }
 
-table, th, td {
+.calendar th, .calendar td {
     border: 1px solid #ccc;
+    padding: 0.5em;
+    text-align: center;
 }
 
-th, td {
-    padding: 0.5rem;
-    text-align: left;
+.calendar th {
+    background-color: #007bff;
+    color: white;
+    font-family: 'Verdana', sans-serif;
 }
 
-#calendar-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1rem;
-}
-
-.calendar-day {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    background-color: #f9f9f9;
+.calendar td {
     position: relative;
+    height: 4em;
+    cursor: pointer;
 }
 
-.calendar-day.full {
-    background-color: #ffcccc;
+.calendar button {
+    background-color: #28a745;
+    border: none;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    border-radius: 50%;
 }
 
-.calendar-day.partial {
-    background-color: #ffffcc;
+.calendar button.completed {
+    background-color: #dc3545;
 }
-
-.calendar-day spanVamos corrigir os problemas para garantir que os horários apareçam corretamente e os links das páginas funcionem. Vou fornecer o código completo necessário.
-
-### Estrutura do Projeto
-
-1. `index.html`
-2. `horarios.html`
-3. `calendario.html`
-4. `styles.css`
-5. `script.js`
-
-### Arquivo `index.html`
-
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Transporte com Anésio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Agendamento de Transporte com Anésio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Agendar</a></li>
-                <li><a href="horarios.html">Horários Marcados</a></li>
-                <li><a href="calendario.html">Calendário</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Agende seu Horário</h2>
-        <form id="agendamento-form">
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data" required>
-            
-            <label for="hora">Hora:</label>
-            <select id="hora" name="hora" required>
-                <option value="00:00">00:00</option>
-                <option value="00:45">00:45</option>
-                <option value="01:30">01:30</option>
-                <option value="02:15">02:15</option>
-                <option value="03:00">03:00</option>
-                <option value="03:45">03:45</option>
-                <option value="04:30">04:30</option>
-                <option value="05:15">05:15</option>
-                <option value="06:00">06:00</option>
-                <option value="06:45">06:45</option>
-                <option value="07:30">07:30</option>
-                <option value="08:15">08:15</option>
-                <option value="09:00">09:00</option>
-                <option value="09:45">09:45</option>
-                <option value="10:30">10:30</option>
-                <option value="11:15">11:15</option>
-                <option value="12:00">12:00</option>
-                <option value="12:45">12:45</option>
-                <option value="13:30">13:30</option>
-                <option value="14:15">14:15</option>
-                <option value="15:00">15:00</option>
-                <option value="15:45">15:45</option>
-                <option value="16:30">16:30</option>
-                <option value="17:15">17:15</option>
-                <option value="18:00">18:00</option>
-                <option value="18:45">18:45</option>
-                <option value="19:30">19:30</option>
-                <option value="20:15">20:15</option>
-                <option value="21:00">21:00</option>
-                <option value="21:45">21:45</option>
-                <option value="22:30">22:30</option>
-                <option value="23:15">23:15</option>
-            </select>
-            
-            <label for="endereco-partida">Endereço de Partida:</label>
-            <input type="text" id="endereco-partida" name="endereco-partida" required>
-            
-            <label for="endereco-destino">Destino Final:</label>
-            <input type="text" id="endereco-destino" name="endereco-destino" required>
-            
-            <label for="quantidade">Quantidade de Pessoas (Máx. 6):</label>
-            <input type="number" id="quantidade" name="quantidade" min="1" max="6" required>
-            
-            <div id="enderecos-adicionais">
-                <!-- Endereços adicionais serão adicionados aqui pelo JavaScript -->
-            </div>
-            
-            <p>Chave Pix para Pagamento: 99292-2248</p>
-            
-            <button type="submit">Agendar</button>
-        </form>
-    </main>
-    <script src="script.js"></script>
-</body>
-</html>

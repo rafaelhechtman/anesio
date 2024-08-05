@@ -1,82 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Transporte com Anésio</title>
+    <title>Minhas Tarefas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Agendamento de Transporte com Anésio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Agendar</a></li>
-                <li><a href="horarios.html">Horários Marcados</a></li>
-                <li><a href="calendario.html">Calendário</a></li>
-            </ul>
-        </nav>
     </header>
     <main>
-        <h2>Agende seu Horário</h2>
-        <form id="agendamento-form">
-            <label for="data">Data:</label>
-            <input type="date" id="data" name="data" required>
-            
-            <label for="hora">Hora:</label>
-            <select id="hora" name="hora" required>
-                <option value="00:00">00:00</option>
-                <option value="00:45">00:45</option>
-                <option value="01:30">01:30</option>
-                <option value="02:15">02:15</option>
-                <option value="03:00">03:00</option>
-                <option value="03:45">03:45</option>
-                <option value="04:30">04:30</option>
-                <option value="05:15">05:15</option>
-                <option value="06:00">06:00</option>
-                <option value="06:45">06:45</option>
-                <option value="07:30">07:30</option>
-                <option value="08:15">08:15</option>
-                <option value="09:00">09:00</option>
-                <option value="09:45">09:45</option>
-                <option value="10:30">10:30</option>
-                <option value="11:15">11:15</option>
-                <option value="12:00">12:00</option>
-                <option value="12:45">12:45</option>
-                <option value="13:30">13:30</option>
-                <option value="14:15">14:15</option>
-                <option value="15:00">15:00</option>
-                <option value="15:45">15:45</option>
-                <option value="16:30">16:30</option>
-                <option value="17:15">17:15</option>
-                <option value="18:00">18:00</option>
-                <option value="18:45">18:45</option>
-                <option value="19:30">19:30</option>
-                <option value="20:15">20:15</option>
-                <option value="21:00">21:00</option>
-                <option value="21:45">21:45</option>
-                <option value="22:30">22:30</option>
-                <option value="23:15">23:15</option>
-                <option value="24:00">24:00</option>
-            </select>
-            
-            <label for="endereco-partida">Endereço de Partida:</label>
-            <input type="text" id="endereco-partida" name="endereco-partida" required>
-            
-            <label for="endereco-destino">Destino Final:</label>
-            <input type="text" id="endereco-destino" name="endereco-destino" required>
-            
-            <label for="quantidade">Quantidade de Pessoas (Máx. 6):</label>
-            <input type="number" id="quantidade" name="quantidade" min="1" max="6" required>
-            
-            <div id="enderecos-adicionais">
-                <!-- Endereços adicionais serão adicionados aqui pelo JavaScript -->
+        <section class="section" id="main-section">
+            <h2>Calendário</h2>
+            <div class="calendar-container">
+                <div class="calendar-nav">
+                    <button id="prev-month">&lt;</button>
+                    <span id="calendar-month-year"></span>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <table class="calendar" id="calendar">
+                    <!-- O calendário será gerado aqui pelo JavaScript -->
+                </table>
             </div>
-            
-            <p>Chave Pix para Pagamento: 99292-2248</p>
-            
-            <button type="submit">Agendar</button>
-        </form>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>
